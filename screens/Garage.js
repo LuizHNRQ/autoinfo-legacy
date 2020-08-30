@@ -5,7 +5,6 @@ import Colors from "../constants/Colors";
 import HeaderCustom from "../components/Header";
 import Footer from "../components/Footer";
 import CarInfo from "../components/CarInfo";
-
 const Garage = () => {
   return (
     <View style={styles.container}>
@@ -14,25 +13,29 @@ const Garage = () => {
         <ScrollView style={styles.scroll}>
           <CarInfo
             image="https://i.imgur.com/iPTEV1U.jpg"
-            maker="Chevrolet Onix"
+            maker="Chevrolet"
+            model=" Onix"
             license="XXX-000"
             data="10/10/2020"
           />
           <CarInfo
             image="https://i.imgur.com/iPTEV1U.jpg"
-            maker="Chevrolet Onix"
+            maker="Chevrolet"
+            model=" Onix"
             license="XXX-000"
             data="10/10/2020"
           />
           <CarInfo
             image="https://i.imgur.com/iPTEV1U.jpg"
-            maker="Chevrolet Onix"
+            maker="Chevrolet"
+            model=" Onix"
             license="XXX-000"
             data="10/10/2020"
           />
           <CarInfo
             image="https://i.imgur.com/iPTEV1U.jpg"
-            maker="Chevrolet Onix"
+            maker="Chevrolet"
+            model=" Onix"
             license="XXX-000"
             data="10/10/2020"
           />

@@ -4,12 +4,24 @@ import Colors from "../constants/Colors";
 
 const CarInfo = (props) => {
   return (
-    <View style={styles.container}>
-      <Image style={styles.carImage} source={{ uri: props.image }}></Image>
+    <View style={{ ...styles.container, ...props.container }}>
+      <Image
+        style={{ ...styles.carImage, ...props.carImage }}
+        source={{ uri: props.image }}
+      ></Image>
       <View style={styles.containerInfo}>
-        <Text style={styles.model}>{props.maker}</Text>
+        <View style={{ ...styles.display, ...props.displayModel }}>
+          <Text style={{ ...styles.model, ...props.makerStyle }}>
+            {props.maker}
+          </Text>
+          <Text style={{ ...styles.model, ...props.modelStyle }}>
+            {props.model}
+          </Text>
+        </View>
         <Text style={styles.license}>{props.license}</Text>
-        <Text style={styles.maintence}>Ultima manutenção</Text>
+        <Text style={{ ...styles.maintence, ...props.message }}>
+          Ultima manutenção
+        </Text>
         <Text style={styles.data}>{props.data}</Text>
       </View>
     </View>
@@ -47,6 +59,9 @@ const styles = StyleSheet.create({
   },
   data: {
     fontSize: 24,
+  },
+  display: {
+    flexDirection: "row",
   },
 });
 
