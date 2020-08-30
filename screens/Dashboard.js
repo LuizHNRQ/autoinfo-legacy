@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 import Colors from "../constants/Colors";
 import HeaderCustom from "../components/Header";
-import InputCustom from "../components/Input";
-import ButtonCustom from "../components/ButtonCustom";
 import Footer from "../components/Footer";
 import DataAndInfo from "../components/DataAndInfo";
 
