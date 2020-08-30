@@ -6,12 +6,15 @@ import ButtonCustom from "./ButtonCustom";
 
 const Footer = (props) => {
   return (
-    <View style={styles.footerContainer}>
+    <View style={{ ...styles.footerContainer, ...props.container }}>
       <Text style={{ ...styles.preText, ...props.preTextStyle }}>
         {props.preText}
       </Text>
-      <ButtonCustom style={styles.button} styleText={styles.text}>
-        Cadastrar
+      <ButtonCustom
+        style={{ ...styles.button, ...props.style }}
+        styleText={{ ...styles.text, ...props.textStyle }}
+      >
+        {props.children}
       </ButtonCustom>
     </View>
   );
@@ -25,9 +28,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: ColorsCustom.detalhe,
   },
-  text: {
-    textDecorationLine: "underline",
-  },
+  text: {},
   preText: {
     alignSelf: "center",
     color: "white",

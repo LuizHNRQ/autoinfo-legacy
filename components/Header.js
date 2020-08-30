@@ -17,8 +17,8 @@ const Header = (props) => {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: ColorsCustom.primario,
-    paddingTop: 50,
-    paddingBottom: 0,
+    paddingTop: 40,
+    paddingBottom: 10,
     paddingLeft: 20,
   },
   text: {
@@ -26,7 +26,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
-  description: {},
+  description: {
+    fontSize: 0,
+    color: "white",
+  },
 });
 
 export default Header;

@@ -21,7 +21,10 @@ const Login = () => {
         <Footer
           preText="Não é Cadastrado ainda?"
           preTextStyle={styles.preTextStyle}
-        ></Footer>
+          textStyle={styles.textStyle}
+        >
+          Cadastrar
+        </Footer>
       </View>
     </View>
   );
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
   container: {},
   header: {},
   loginInputContainer: {
-    paddingVertical: 70,
+    paddingVertical: 80,
   },
   loginText: {
     fontSize: 30,
@@ -39,6 +42,10 @@ const styles = StyleSheet.create({
   },
   preTextStyle: {
     fontSize: 18,
+    textDecorationLine: "underline",
+  },
+  textStyle: {
+    textDecorationLine: "underline",
   },
 });
 
