@@ -31,12 +31,10 @@ const Dashboard = () => {
           style={styles.up}
           preText="Acessar Sua Garagem"
           preTextStyle={styles.preTextStyle}
-        >
-          Meus Veiculos
-        </Footer>
-        <Footer container={styles.container} style={styles.down}>
-          Adicionar Revisão
-        </Footer>
+          footerType="dashboard"
+          firstButton="Meus Veículos"
+          secondButton="Adicionar Revisão"
+        />
       </View>
     </View>
   );

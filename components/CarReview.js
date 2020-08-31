@@ -8,8 +8,8 @@ const CarReview = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{props.children}</Text>
-      <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
-      <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
+      <DataAndInfo data={props.data}>{props.info}</DataAndInfo>
+      <DataAndInfo data={props.data}>{props.info}</DataAndInfo>
     </View>
   );
 };

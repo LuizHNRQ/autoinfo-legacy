@@ -22,6 +22,7 @@ const Login = () => {
           preText="Não é Cadastrado ainda?"
           preTextStyle={styles.preTextStyle}
           textStyle={styles.textStyle}
+          footerType={"login"}
         >
           Cadastrar
         </Footer>

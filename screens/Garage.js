@@ -41,7 +41,9 @@ const Garage = () => {
           />
         </ScrollView>
       </View>
-      <Footer style={styles.textStyle}>Adicionar Veículos</Footer>
+      <Footer buttonStyle={styles.textStyle} footerType={"garage"}>
+        Adicionar Veículos
+      </Footer>
     </View>
   );
 };
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
   scroll: {
     height: 430,
   },
-  textStyle: {
+  buttonStyle: {
     backgroundColor: Colors.primario,
   },
 });

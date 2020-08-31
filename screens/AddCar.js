@@ -31,8 +31,12 @@ const AddCar = (props) => {
         </View>
 
         <ButtonCustom style={styles.button}>Adicionar Revisão</ButtonCustom>
-        <CarReview>Revisôes Passadas</CarReview>
-        <CarReview>Revisôes Futuras</CarReview>
+        <CarReview data="10/10/2020" info="exemplo">
+          Revisões Passadas
+        </CarReview>
+        <CarReview data="10/10/2020" info="exemplo">
+          Revisões Futuras
+        </CarReview>
       </ScrollView>
     </View>
   );
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   scroll: {
-    height: 500,
+    height: 530,
   },
 });
 
