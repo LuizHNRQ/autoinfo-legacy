@@ -7,7 +7,7 @@ import InputCustom from "../components/Input";
 import ButtonCustom from "../components/ButtonCustom";
 import Footer from "../components/Footer";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <HeaderCustom styleText={styles.header} title="AutoInfo"></HeaderCustom>
@@ -15,7 +15,9 @@ const Login = () => {
         <Text style={styles.loginText}>Login</Text>
         <InputCustom placeholder="Usuário..."></InputCustom>
         <InputCustom placeholder="Senha..."></InputCustom>
-        <ButtonCustom>Entrar</ButtonCustom>
+        <ButtonCustom onPress={() => navigation.navigate("Dashboard")}>
+          Entrar
+        </ButtonCustom>
       </View>
       <View>
         <Footer

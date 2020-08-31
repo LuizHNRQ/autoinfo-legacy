@@ -5,20 +5,6 @@ import ColorsCustom from "../constants/Colors";
 import ButtonCustom from "./ButtonCustom";
 
 const Footer = (props) => {
-  // return (
-  //   <View style={{ ...styles.footerContainer, ...props.container }}>
-  //     <Text style={{ ...styles.preText, ...props.preTextStyle }}>
-  //       {props.preText}
-  //     </Text>
-  //     <ButtonCustom
-  //       style={{ ...styles.button, ...props.style }}
-  //       styleText={{ ...styles.text, ...props.textStyle }}
-  //     >
-  //       {props.children}
-  //     </ButtonCustom>
-  //   </View>
-  // );
-
   const renderFooter = () => {
     switch (props.footerType) {
       case "login":
@@ -48,6 +34,7 @@ const Footer = (props) => {
             <ButtonCustom
               style={{ ...styles.button, ...props.style }}
               styleText={{ ...styles.text, ...props.textStyle }}
+              onPress={props.firstButtonPress}
             >
               {props.firstButton}
             </ButtonCustom>
@@ -59,6 +46,7 @@ const Footer = (props) => {
                 ...styles.secondButton,
               }}
               styleText={{ ...styles.text, ...props.textStyle }}
+              onPress={props.secondButtonPress}
             >
               {props.secondButton}
             </ButtonCustom>
@@ -71,6 +59,7 @@ const Footer = (props) => {
             <ButtonCustom
               style={{ ...props.buttonStyle }}
               styleText={{ ...styles.textStyle }}
+              onPress={props.garagePress}
             >
               {props.children}
             </ButtonCustom>

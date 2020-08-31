@@ -6,7 +6,7 @@ import HeaderCustom from "../components/Header";
 import Footer from "../components/Footer";
 import DataAndInfo from "../components/DataAndInfo";
 
-const Dashboard = () => {
+const Dashboard = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <HeaderCustom
@@ -34,6 +34,8 @@ const Dashboard = () => {
           footerType="dashboard"
           firstButton="Meus Veículos"
           secondButton="Adicionar Revisão"
+          firstButtonPress={() => navigation.navigate("Garage")}
+          secondButtonPress={() => navigation.navigate("AddReview")}
         />
       </View>
     </View>

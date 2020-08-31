@@ -5,7 +5,7 @@ import Colors from "../constants/Colors";
 import HeaderCustom from "../components/Header";
 import Footer from "../components/Footer";
 import CarInfo from "../components/CarInfo";
-const Garage = () => {
+const Garage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <HeaderCustom styleText={styles.header} title="Garagem"></HeaderCustom>
@@ -41,7 +41,11 @@ const Garage = () => {
           />
         </ScrollView>
       </View>
-      <Footer buttonStyle={styles.textStyle} footerType={"garage"}>
+      <Footer
+        buttonStyle={styles.textStyle}
+        footerType={"garage"}
+        garagePress={() => navigation.navigate("AddCar")}
+      >
         Adicionar Veículos
       </Footer>
     </View>

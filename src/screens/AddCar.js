@@ -9,7 +9,7 @@ import ButtonCustom from "../components/ButtonCustom";
 import DataAndInfo from "../components/DataAndInfo";
 import CarReview from "../components/CarReview";
 
-const AddCar = (props) => {
+const AddCar = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <HeaderCustom styleText={styles.header} title="Adicionar"></HeaderCustom>
@@ -30,7 +30,12 @@ const AddCar = (props) => {
           />
         </View>
 
-        <ButtonCustom style={styles.button}>Adicionar Revisão</ButtonCustom>
+        <ButtonCustom
+          style={styles.button}
+          onPress={() => navigation.navigate("AddReview")}
+        >
+          Adicionar Revisão
+        </ButtonCustom>
         <CarReview data="10/10/2020" info="exemplo">
           Revisões Passadas
         </CarReview>

@@ -19,7 +19,7 @@ import PickerCustom from "../components/PickerCustom";
 import KmInput from "../components/KmInput";
 import Input from "../components/Input";
 
-const AddReview = (props) => {
+const AddReview = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState("java");
   return (
     <View style={styles.container}>
@@ -53,7 +53,12 @@ const AddReview = (props) => {
             style={styles.input}
           ></Input>
         </View>
-        <ButtonCustom></ButtonCustom>
+        <ButtonCustom
+          style={styles.button}
+          onPress={() => navigation.navigate("AddReview")}
+        >
+          Adicionar esta Revisão
+        </ButtonCustom>
       </ScrollView>
     </View>
   );
@@ -100,6 +105,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: 300,
     height: 100,
+  },
+  button: {
+    marginHorizontal: 20,
   },
 });
 
