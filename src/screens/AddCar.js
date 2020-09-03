@@ -12,7 +12,7 @@ import CarReview from "../components/CarReview";
 const AddCar = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <HeaderCustom styleText={styles.header} title="Adicionar"></HeaderCustom>
+      {/* <HeaderCustom styleText={styles.header} title="Adicionar"></HeaderCustom> */}
       <ScrollView style={styles.scroll}>
         <View>
           <CarInfo
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   scroll: {
-    height: 530,
+    height: 580,
   },
 });
 

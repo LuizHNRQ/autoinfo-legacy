@@ -8,7 +8,7 @@ import CarInfo from "../components/CarInfo";
 const Garage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <HeaderCustom styleText={styles.header} title="Garagem"></HeaderCustom>
+      {/* <HeaderCustom styleText={styles.header} title="Garagem"></HeaderCustom> */}
       <View>
         <ScrollView style={styles.scroll}>
           <CarInfo
@@ -42,6 +42,7 @@ const Garage = ({ navigation }) => {
         </ScrollView>
       </View>
       <Footer
+        style={styles.footer}
         buttonStyle={styles.textStyle}
         footerType={"garage"}
         garagePress={() => navigation.navigate("AddCar")}
@@ -56,11 +57,12 @@ const styles = StyleSheet.create({
   container: {},
   header: {},
   scroll: {
-    height: 430,
+    height: 480,
   },
   buttonStyle: {
     backgroundColor: Colors.primario,
   },
+  footer: {},
 });
 
 export default Garage;

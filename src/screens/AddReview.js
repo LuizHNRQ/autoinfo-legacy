@@ -23,13 +23,13 @@ const AddReview = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState("java");
   return (
     <View style={styles.container}>
-      <HeaderCustom
+      {/* <HeaderCustom
         styleText={styles.header}
         title="Adicionar"
         styleDescription={styles.description}
       >
         Revisão
-      </HeaderCustom>
+      </HeaderCustom> */}
       <ScrollView style={styles.scroll}>
         <View style={styles.containerCustom}>
           <PickerCustom label="Chevrolet Onix">
@@ -55,7 +55,7 @@ const AddReview = ({ navigation }) => {
         </View>
         <ButtonCustom
           style={styles.button}
-          onPress={() => navigation.navigate("AddReview")}
+          onPress={() => navigation.navigate("AddCar")}
         >
           Adicionar esta Revisão
         </ButtonCustom>

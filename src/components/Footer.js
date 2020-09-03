@@ -18,6 +18,7 @@ const Footer = (props) => {
             <ButtonCustom
               style={{ ...styles.button, ...props.style }}
               styleText={{ ...styles.text, ...props.textStyle }}
+              onPress={props.pressAddUser}
             >
               {props.children}
             </ButtonCustom>

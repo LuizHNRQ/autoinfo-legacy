@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <HeaderCustom styleText={styles.header} title="AutoInfo"></HeaderCustom>
+      {/* <HeaderCustom styleText={styles.header} title="AutoInfo"></HeaderCustom> */}
       <View style={styles.loginInputContainer}>
         <Text style={styles.loginText}>Login</Text>
         <InputCustom placeholder="Usuário..."></InputCustom>
@@ -25,6 +25,7 @@ const Login = ({ navigation }) => {
           preTextStyle={styles.preTextStyle}
           textStyle={styles.textStyle}
           footerType={"login"}
+          pressAddUser={() => navigation.navigate("AddUser")}
         >
           Cadastrar
         </Footer>
@@ -34,10 +35,12 @@ const Login = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    //flex: 1,
+  },
   header: {},
   loginInputContainer: {
-    paddingVertical: 80,
+    paddingVertical: 100,
   },
   loginText: {
     fontSize: 30,
@@ -49,6 +52,9 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     textDecorationLine: "underline",
+  },
+  footerContainer: {
+    flex: 1,
   },
 });
 
