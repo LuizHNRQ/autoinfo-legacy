@@ -4,7 +4,7 @@ import { TextInput, StyleSheet, View, Text } from "react-native";
 
 const Input = (props) => {
   const renderInput = () => {
-    switch (props.inputType) {
+    switch (props.inputTypeDisplay) {
       case "login":
         return (
           <View>

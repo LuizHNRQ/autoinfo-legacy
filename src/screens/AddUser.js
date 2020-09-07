@@ -8,10 +8,14 @@ import ButtonCustom from "../components/ButtonCustom";
 const addUser = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Input inputType="addUser" style={styles.input} inputText="Nome" />
-      <Input inputType="addUser" style={styles.input} inputText="Usuário" />
+      <Input inputTypeDisplay="addUser" style={styles.input} inputText="Nome" />
       <Input
-        inputType="addUser"
+        inputTypeDisplay="addUser"
+        style={styles.input}
+        inputText="Usuário"
+      />
+      <Input
+        inputTypeDisplay="addUser"
         style={styles.input}
         inputText="Email"
         keyboardType="email-address"
@@ -21,13 +25,13 @@ const addUser = ({ navigation }) => {
         initialValue=""
       />
       <Input
-        inputType="addUser"
+        inputTypeDisplay="addUser"
         style={styles.input}
         inputText="Senha"
         secureTextEntry
       />
       <Input
-        inputType="addUser"
+        inputTypeDisplay="addUser"
         style={styles.input}
         inputText="Confirmação de Senha"
         secureTextEntry
