@@ -13,8 +13,21 @@ const Login = ({ navigation }) => {
       {/* <HeaderCustom styleText={styles.header} title="AutoInfo"></HeaderCustom> */}
       <View style={styles.loginInputContainer}>
         <Text style={styles.loginText}>Login</Text>
-        <InputCustom placeholder="Usuário..."></InputCustom>
-        <InputCustom placeholder="Senha..."></InputCustom>
+        <InputCustom
+          id="username"
+          inputType="login"
+          placeholder="Usuário..."
+          minLength={3}
+          onInputChange={() => {}}
+        ></InputCustom>
+        <InputCustom
+          id="password"
+          inputType="login"
+          placeholder="Senha..."
+          minLength={3}
+          secureTextEntry
+          onInputChange={() => {}}
+        ></InputCustom>
         <ButtonCustom onPress={() => navigation.navigate("Dashboard")}>
           Entrar
         </ButtonCustom>
@@ -40,7 +53,7 @@ const styles = StyleSheet.create({
   },
   header: {},
   loginInputContainer: {
-    paddingVertical: 100,
+    paddingVertical: "25%",
   },
   loginText: {
     fontSize: 30,

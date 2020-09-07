@@ -6,6 +6,7 @@ import {
   createStackNavigator,
   HeaderBackground,
   HeaderTitle,
+  createSwitchNavigation,
 } from "@react-navigation/stack";
 
 import Colors from "../constants/Colors";
@@ -28,7 +29,7 @@ function HeaderStyle() {
     headerTintColor: "white",
     headerTitleStyle: {
       fontWeight: "600",
-      fontSize: 70,
+      fontSize: 50,
     },
   };
 }
@@ -42,7 +43,14 @@ export default function Routes() {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{ ...HeaderStyle(), title: "AutoInfo" }}
+          options={{
+            ...HeaderStyle(),
+            title: "AutoInfo",
+            headerTitleStyle: {
+              fontWeight: "600",
+              fontSize: 70,
+            },
+          }}
         />
 
         <Stack.Screen
@@ -65,18 +73,21 @@ export default function Routes() {
           component={AddReviewScreen}
           options={{
             ...HeaderStyle(),
-
             title: `Adicionar Revisão`,
             headerStyle: {
               backgroundColor: Colors.primario,
-              height: 200,
+              height: 100,
+            },
+            headerTitleStyle: {
+              fontWeight: "600",
+              fontSize: 40,
             },
           }}
         />
         <Stack.Screen
           name="AddUser"
           component={AddUserScreen}
-          options={{ headerShown: false }}
+          options={{ ...HeaderStyle(), title: "Cadastro" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

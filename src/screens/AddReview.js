@@ -23,13 +23,7 @@ const AddReview = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState("java");
   return (
     <View style={styles.container}>
-      {/* <HeaderCustom
-        styleText={styles.header}
-        title="Adicionar"
-        styleDescription={styles.description}
-      >
-        Revisão
-      </HeaderCustom> */}
+      {/* <HeaderCustom styleText={styles.header} title="Revisão"></HeaderCustom> */}
       <ScrollView style={styles.scroll}>
         <View style={styles.containerCustom}>
           <PickerCustom label="Chevrolet Onix">
@@ -74,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.tercearia,
   },
   scroll: {
-    height: 510,
+    height: 585,
   },
   description: {
     fontSize: 70,

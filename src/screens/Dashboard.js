@@ -14,11 +14,13 @@ const Dashboard = ({ navigation }) => {
         title="Olá Cláudio,"
         styleDescription={styles.description}
       >
-        {`A sua próxima revisão\ndeve ocorrer no dia 18/10 ou quando\nChevrolet Onix\natingir 25.000Km.`}
+        {`A sua próxima revisão\ndeve ocorrer no dia 18/10\nou quando\nChevrolet Onix\natingir 25.000Km.`}
       </HeaderCustom>
       <View>
         <Text style={styles.information}>Ultimas Manutenções</Text>
         <ScrollView style={styles.scroll}>
+          <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
+          <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
           <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
           <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
           <DataAndInfo data="10/10/2020">Informação</DataAndInfo>
@@ -45,13 +47,13 @@ const Dashboard = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {},
   scroll: {
-    height: 125,
+    height: 230,
   },
   header: {
-    fontSize: 55,
+    fontSize: 40,
   },
   description: {
-    fontSize: 28,
+    fontSize: 26,
   },
   information: {
     marginVertical: 10,
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
   preTextStyle: {
     fontSize: 36,
     paddingVertical: 10,
-    fontWeight: "bold",
+    fontWeight: "600",
   },
 });
 

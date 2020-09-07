@@ -28,9 +28,9 @@ const Footer = (props) => {
       case "dashboard":
         return (
           <View style={{ ...styles.footerContainer, ...props.container }}>
-            <Text style={{ ...styles.preText, ...props.preTextStyle }}>
+            {/* <Text style={{ ...styles.preText, ...props.preTextStyle }}>
               {props.preText}
-            </Text>
+            </Text> */}
 
             <ButtonCustom
               style={{ ...styles.button, ...props.style }}
