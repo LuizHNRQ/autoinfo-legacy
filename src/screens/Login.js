@@ -6,16 +6,16 @@ import HeaderCustom from "../components/Header";
 import InputCustom from "../components/Input";
 import ButtonCustom from "../components/ButtonCustom";
 import Footer from "../components/Footer";
+import firebase from "firebase";
 
 // () => navigation.navigate("Dashboard")
 
 const Login = ({ navigation }) => {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-
-  const processLogin = () => {
-    console.log(user, password);
-  };
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+    message: "",
+  });
 
   useEffect(() => {
     // Your web app's Firebase configuration
@@ -28,10 +28,52 @@ const Login = ({ navigation }) => {
       messagingSenderId: "291816444037",
       appId: "1:291816444037:web:2348b13391f7f27fd459ec",
     };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  });
 
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  }, []);
+
+  const processLogin = () => {
+    const { email, password } = userInfo;
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        //console.log("ok logado", user);
+        setUserInfo({ ...userInfo, message: "" });
+        navigation.navigate("Dashboard");
+      })
+      .catch((error) => {
+        console.log("erro", error);
+        setUserInfo({ ...userInfo, message: getErrorByMessage(error.code) });
+      });
+  };
+
+  const getErrorByMessage = (code) => {
+    switch (code) {
+      case "auth/wrong-password":
+        return "Senha Errada";
+      case "auth/user-not-found":
+        return "Usuário Não encontrado";
+      case "auth/invalid-email":
+        return "Email Inválido";
+      default:
+        return "Erro no login";
+    }
+  };
+
+  const renderMessage = () => {
+    const { message } = userInfo;
+
+    if (!message) {
+      return null;
+    } else {
+      return <Text style={styles.errorMessage}>{message}</Text>;
+    }
+  };
   return (
     <View style={styles.container}>
       {/* <HeaderCustom styleText={styles.header} title="AutoInfo"></HeaderCustom> */}
@@ -41,12 +83,14 @@ const Login = ({ navigation }) => {
           id="username"
           inputTypeDisplay="login"
           placeholder="Usuário..."
+          autoCapitalize="none"
+          keyboardType="email-address"
           minLength={3}
           onChangeText={(input) => {
-            setUser(input);
+            setUserInfo({ ...userInfo, email: input });
             //console.log(user);
           }}
-          value={user}
+          value={userInfo.email}
         ></InputCustom>
         <InputCustom
           id="password"
@@ -55,10 +99,10 @@ const Login = ({ navigation }) => {
           minLength={3}
           secureTextEntry
           onChangeText={(input) => {
-            setPassword(input);
+            setUserInfo({ ...userInfo, password: input });
             //console.log(password);
           }}
-          value={password}
+          value={userInfo.password}
         ></InputCustom>
         <ButtonCustom
           onPress={() => {
@@ -67,6 +111,7 @@ const Login = ({ navigation }) => {
         >
           Entrar{" "}
         </ButtonCustom>
+        {renderMessage()}
       </View>
       <View>
         <Footer
@@ -104,6 +149,12 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flex: 1,
+  },
+  errorMessage: {
+    alignSelf: "center",
+    fontSize: 18,
+    color: "red",
+    marginTop: -10,
   },
 });
 
